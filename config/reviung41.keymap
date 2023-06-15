@@ -15,9 +15,9 @@
 
                 default_layer {
 // -------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |   BKSP    |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |    '      |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT(RET) |
+// |  ESC |  Q  |  W  |  E  |  R  |  T  |||||  Y  |  U   |  I  |  O  |  P  |   BKSP    |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |||||  H  |  J   |  K  |  L  |  ;  |    '      |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |||||  N  |  M   |  ,  |  .  |  /  | SHFT(RET) |
 //                         | GUI | LWR | SPC | RSE  | ALT |
                         bindings = <
    &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
@@ -28,10 +28,10 @@
                 };
 
                 lower_layer {
-// ------------------------------------------------------------------------------------
-// | `  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL |
-// | ~  |  _  |  =  |  {  |  }  | "|" |   | HOME|     |  UP |  -  |  +  |PGUP |
-// | TAB|VOL- |VOL+ |CAPS |PRINT|SCRL |   | END | LFT | DWN | RGHT|     |PGDN |
+// ----------------------------------------------------------------------------
+// | `  |  !  |  @  |  #  |  $  |  %  |||||  ^  |  &  |  *  |  (  |  )  | DEL |
+// | ~  |  _  |  =  |  {  |  }  | "|" ||||| HOME|     |  UP |  -  |  +  |PGUP |
+// | TAB|VOL- |VOL+ |CAPS |PRINT|SCRL ||||| END | LFT | DWN | RGHT|     |PGDN |
 //                       |     |     | RET | ADJ |     |
                         bindings = <
    &kp GRAVE  &kp EXCL      &kp AT        &kp HASH  &kp DLLR   &kp PRCNT         &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp DEL
@@ -42,10 +42,10 @@
                 };
 
                 raise_layer {
-// ----------------------------------------------------------------------------
-// |     |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
-// |     |     |     |  [  |  ]  |  \  |   | F1  | F2  | F3  | F4  | F5  | F6  |
-// |     |     |     |     |     |     |   | F7  | F8  | F9  | F10 | F11 | F12 |
+// -----------------------------------------------------------------------------
+// |     |  1  |  2  |  3  |  4  |  5  |||||  6  |  7  |  8  |  9  |  0  | DEL |
+// |     |     |     |  [  |  ]  |  \  ||||| F1  | F2  | F3  | F4  | F5  | F6  |
+// |     |     |     |     |     |     ||||| F7  | F8  | F9  | F10 | F11 | F12 |
 //                        |     | ADJ | BKSP |    |     |
                         bindings = <
    &trans  &kp N1  &kp N2  &kp N3    &kp N4    &kp N5         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
@@ -56,16 +56,16 @@
                 };
 
                 adjust_layer {
-// -----------------------------------------------------------------------------------------
-// | RGB BRI+ | RGB SAT+ | RGB HUE+ | RGB ANI+ | RGB SPD+ | RGB TOG |   |  BT1  | BT2 | BT3 | BT4 | BT5 | BT CLR |
-// | RGB BRI- | RGB SAT- | RGB HUE- | RGB ANI- | RGB SPD- | AUDIOTOG|   |CAPTURE|     |     |     |     |        |
-// |          |          |          |          |          |         |   | RESET |     |     |     |     |  BOOT  |
-//                                                    |     |     |       |     |     |
+// ---------------------------------------------------------------------------------------
+// | BRI+ | SAT+ | HUE+ | ANI+ | SPD+ | RGBTOG ||||| BT1 | BT2 | BT3 | BT4 | BT5 | BTCLR |
+// | BRI- | SAT- | HUE- | ANI- | SPD- | SNDTOG ||||| CPT |     |     |     |     | RESET |
+// |      |      |      |      |      |        |||||     |     |     |     |     | BOOTL |
+//                                |     |     |     |     |     |
                         bindings = <
    &rgb_ug  RGB_BRI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SPI  &rgb_ug RGB_TOG     &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-   &rgb_ug  RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &kp LA(LC(F11))     &kp LG(LS(S))     &none         &none         &none         &none         &none
-   &none             &none            &none            &none            &none            &none               &sys_reset        &none         &none         &none         &none         &bootloader
-                                                                              &trans      &trans       &tog 3        &trans      &trans
+   &rgb_ug  RGB_BRD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SPD  &kp LA(LC(F11))     &kp LG(LS(S))     &none         &none         &none         &none         &sys_reset
+   &none             &none            &none            &none            &none            &none               &none             &none         &none         &none         &none         &bootloader
+                                                                              &trans      &trans       &trans        &trans      &trans
                         >;
                 };
         };
